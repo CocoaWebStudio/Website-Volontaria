@@ -27,7 +27,8 @@
     "@ckeditor/ckeditor5-build-inline": "^17.0.0",
     "@ckeditor/ckeditor5-font": "^17.0.0",
     "angular2-qrcode": "^2.0.3",
-    "moment": "^2.27.0",
+    "dotenv": "^16.0.1",
+    "moment": "^2.29.3",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
