@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "config": "ts-node ./scripts/setEnv.ts",
+    "start": "npm run config -- --environment=dev && ng serve",
+    "build": "npm run config -- --environment=prod && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "prettier:check": "prettier --check \"**\"",
@@ -27,7 +28,6 @@
     "@ckeditor/ckeditor5-build-inline": "^17.0.0",
     "@ckeditor/ckeditor5-font": "^17.0.0",
     "angular2-qrcode": "^2.0.3",
-    "dotenv": "^16.0.1",
     "moment": "^2.29.3",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
@@ -41,6 +41,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^6.0.0",
+    "dotenv": "^16.0.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -53,6 +54,7 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.5",
     "prettier": "^2.0.5",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "yargs": "^17.5.1"
   }
 }

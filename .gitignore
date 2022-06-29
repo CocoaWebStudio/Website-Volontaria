@@ -47,5 +47,5 @@ Thumbs.db
 
 src/ckeditor5/node_modules
 
-src/environments/*.env
-!src/environments/model.env
+*.env
+!model.env
