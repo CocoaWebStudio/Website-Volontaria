@@ -14,7 +14,7 @@ import { IUserRegister } from '../../models/user';
 })
 export class LoginComponent implements OnInit {
   activeSection: 'signin' | 'signup' = 'signin';
-
+  public isLoging: Boolean = true;
   signinForm: FormGroup;
   signinNonFieldErrors: string[] = [];
   signupForm: FormGroup;
@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   switchDrawer(): void {
+    this.isLoging = !this.isLoging;
     if (this.activeSection === 'signin') {
       this.activeSection = 'signup';
     } else {

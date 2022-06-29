@@ -1,5 +1,5 @@
-<div class="login-page">
-  <div class="login-page__section">
+<div class="login-page" fxLayout="row wrap" fxLayout.lt-sm="column">
+  <div [fxHide.lt-sm]="!isLoging" class="login-page__section" fxFlex="50%" fxFlex.lt-sm="100%">
     <div class="login-page__section__header">
     </div>
     <div class="login-page__section__content">
@@ -53,7 +53,7 @@
 
     </div>
   </div>
-  <div class="login-page__section">
+  <div [fxHide.lt-sm]="isLoging" class="login-page__section" fxFlex="50%" fxFlex.lt-sm="100%">
     <div class="login-page__section__header">
     </div>
     <div class="login-page__section__content">
@@ -101,30 +101,28 @@
             {{ signupForm.controls.password2.getError('api') }}
           </mat-error>
         </mat-form-field>
-        <div class="login-page__section__content__form__collateral-fields">
-          <mat-form-field appearance="fill">
-            <input
-              matInput
-              placeholder="Prenom"
-              type="text"
-              [formControlName]="'first_name'"
-            />
-            <mat-error *ngIf="signupForm.controls.first_name.hasError('api')">
-              {{ signupForm.controls.first_name.getError('api') }}
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <input
-              matInput
-              placeholder="Nom"
-              type="text"
-              [formControlName]="'last_name'"
-            />
-            <mat-error *ngIf="signupForm.controls.last_name.hasError('api')">
-              {{ signupForm.controls.last_name.getError('api') }}
-            </mat-error>
-          </mat-form-field>
-        </div>
+        <mat-form-field appearance="fill">
+          <input
+            matInput
+            placeholder="Prenom"
+            type="text"
+            [formControlName]="'first_name'"
+          />
+          <mat-error *ngIf="signupForm.controls.first_name.hasError('api')">
+            {{ signupForm.controls.first_name.getError('api') }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input
+            matInput
+            placeholder="Nom"
+            type="text"
+            [formControlName]="'last_name'"
+          />
+          <mat-error *ngIf="signupForm.controls.last_name.hasError('api')">
+            {{ signupForm.controls.last_name.getError('api') }}
+          </mat-error>
+        </mat-form-field>
         <mat-error *ngFor="let formError of signupForm.errors | keyvalue">
           {{ formError.value }}
         </mat-error>
@@ -147,6 +145,7 @@
 
   <div
     class="login-page__drawer"
+    fxHide.lt-sm="true"
     [ngClass]="{
       'login-page__drawer--right': activeSection === 'signin',
       'login-page__drawer--left': activeSection === 'signup'
