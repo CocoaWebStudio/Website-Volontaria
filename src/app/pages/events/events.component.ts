@@ -30,7 +30,7 @@ export class EventsComponent implements OnInit {
   participationList: Participation[];
   participationList$: Observable<Participation[]>;
 
-  cell: Cell;
+  cell: Cell = new Cell();
 
   eventDayList: Event[];
   eventDayList$: Observable<Event[]>;
